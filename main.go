@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 
+	brandRoutes "go/routes"
+
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
@@ -33,15 +35,10 @@ func main() {
 	}
 
 	fmt.Println("Successfully connected and pinged.")
-
-	fmt.Printf("Starting server at port 8080\n")
-	
-	// TODO need to be moved to folder routes
-	// http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request){
-    //     fmt.Fprintf(w, "Hello!")
-    // })
+	r := brandRoutes.Router()
+	fmt.Printf("Starting server at port 8080...\n")
 	 
-    if err := http.ListenAndServe(":8080", nil); err != nil {
+    if err := http.ListenAndServe(":8080", r); err != nil {
         log.Fatal(err)
     }
 }
