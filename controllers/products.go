@@ -8,12 +8,12 @@ import (
 )
 
 
-func GetAllBrands(w http.ResponseWriter, r *http.Request) {
-    fmt.Println("Endpoint hit: GetAllBrands")
+func GetAllProducts(w http.ResponseWriter, r *http.Request) {
+    fmt.Println("Endpoint hit: GetAllProducts")
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	resp := make(map[string]string)
-	resp["message"] = "Status OK -> brands are here"
+	resp["message"] = "Status OK -> products are here"
 	jsonResp, err := json.Marshal(resp)
 	if err != nil {
 		log.Fatalf("Error happened in JSON marshal. Err: %s", err)
@@ -22,12 +22,12 @@ func GetAllBrands(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-func GetSingleBrand(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(("Endpoint hit: GetSingleBrand"))
+func GetSingleProduct(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(("Endpoint hit: GetSingleProduct"))
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	resp := make(map[string]string)
-	resp["message"] = "Status Ok -> brand is here"
+	resp["message"] = "Status Ok -> product is here"
 	jsonResp, err := json.Marshal(resp)
 	if err != nil {
 		log.Fatalf("Error happened in JSON marshal. Err: %s", err)
@@ -36,12 +36,12 @@ func GetSingleBrand(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-func CreateBrand(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(("Endpoint hit: CreateBrand"))
+func CreateProduct(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(("Endpoint hit: CreateProduct"))
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	resp := make(map[string]string)
-	resp["message"] = "Status OK -> brand was created"
+	resp["message"] = "Status OK -> product was created"
 	jsonResp, err := json.Marshal(resp)
 	if err != nil {
 		log.Fatalf("Error happened in JSON marshal. Err: %s", err)
@@ -50,12 +50,12 @@ func CreateBrand(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-func EditBrand(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(("Endpoint hit: EditBrand"))
+func EditProduct(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(("Endpoint hit: EditProduct"))
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	resp := make(map[string]string)
-	resp["message"] = "Status OK -> brand was edited"
+	resp["message"] = "Status OK -> product was edited"
 	jsonResp, err := json.Marshal(resp)
 	if err != nil {
 		log.Fatalf("Error happened in JSON marshal. Err: %s", err)
@@ -64,12 +64,12 @@ func EditBrand(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-func DeleteBrand(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(("Endpoint hit: DeleteBrand"))
+func DeleteProduct(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(("Endpoint hit: DeleteProduct"))
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	resp := make(map[string]string)
-	resp["message"] = "Status OK -> brand was deleted"
+	resp["message"] = "Status OK -> product was deleted"
 	jsonResp, err := json.Marshal(resp)
 	if err != nil {
 		log.Fatalf("Error happened in JSON marshal. Err: %s", err)

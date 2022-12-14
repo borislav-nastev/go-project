@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 
-	brandRoutes "go/routes"
+	productRoutes "go/routes"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -35,7 +35,7 @@ func main() {
 	}
 
 	fmt.Println("Successfully connected and pinged.")
-	r := brandRoutes.Router()
+	r := productRoutes.Router()
 	fmt.Printf("Starting server at port 8080...\n")
 	 
     if err := http.ListenAndServe(":8080", r); err != nil {
